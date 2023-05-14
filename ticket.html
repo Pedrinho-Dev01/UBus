@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Uber+Move&display=swap" rel="stylesheet" />
+        <link href="./css/main.css" rel="stylesheet" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <style>
+            .ticket {
+              margin: auto;
+            }
+            table.center {
+                margin-left: auto; 
+                margin-right: auto;
+            }
+        </style>
+       
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="w3-bar w3-green">
+                <div style="text-align: center; height: 75px;"></div> 
+        </div>
+
+        <div class="ticket" style="text-align: center;color: white; background-image: url('/images/v44_409.png');">
+            <h1>Ticket  #<a id="ticket_number"></a></h1>
+            <script>
+                document.getElementById("ticket_number").innerHTML = Math.floor(Math.random() * 1000000) + 1;;
+            </script>
+            <p>Booking ID: <a id="booking_ID"></a></p>
+            <script>
+                document.getElementById("booking_ID").innerHTML = Math.floor(Math.random() * 1000000000000) + 1;;
+            </script>
+            <p id="date"></p>
+            <script>
+                const d = new Date();
+                document.getElementById("date").innerHTML = d.toDateString();
+            </script>
+            <p><b>Green Zone</b></p>
+            
+            <p><b>Pick-up Point:</b> Universidade de Aveiro, 3810-193 Aveiro, Portugal</p>
+            <p><b>Destination:</b> Largo da Estação dos Caminhos de Ferro, 3800-179 Aveiro, Portugal</p>
+            
+            <p>Vehicle ID: EB-<a id="vehicle_ID"></a></p>
+            <script>
+                document.getElementById("vehicle_ID").innerHTML = Math.floor(Math.random() * 1000000) + 1;;
+            </script>
+            <p>Driver ID: D-<a id="driver_ID"></a></p>
+            <script>
+                document.getElementById("driver_ID").innerHTML = Math.floor(Math.random() * 1000000) + 1;;
+            </script>
+            <p>Validate your ticket using the QR code below:</p>
+            <img src="/images/qrcode.png" width="25%">
+            <p></p>
+            <p></p>
+            <p></p>
+            <div style="font-size: 11px;">
+                UBus is not responsible for any missed trips due to non-compliance with the recommended trip plan
+                    or tardiness to the pick-up zone, and there will be no refunds issued in these cases. Please plan
+                     your trip carefully and arrive at the pick-up zone in a timely manner to ensure a smooth and satisfactory
+                      travel experience with UBus.
+            </div>
+            
+            </p>
+        </div>
+
+        <div class="w3-bar w3-green">
+            <div style="text-align: center; height: 75px;"></div> 
+        </div>
+    </body>
+</html>
