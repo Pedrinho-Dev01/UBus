@@ -32,15 +32,23 @@
                 document.getElementById("booking_ID").innerHTML = Math.floor(Math.random() * 1000000000000) + 1;;
             </script>
             <p id="date"></p>
-            <script>
-                const d = new Date();
-                document.getElementById("date").innerHTML = d.toDateString();
-            </script>
+            
             <p><b>Green Zone</b></p>
             
-            <p><b>Pick-up Point:</b> Universidade de Aveiro, 3810-193 Aveiro, Portugal</p>
-            <p><b>Destination:</b> Largo da Estação dos Caminhos de Ferro, 3800-179 Aveiro, Portugal</p>
+            <p><b>Pick-up Point:</b> Universidade de Aveiro, 3810-193 Aveiro, Portugal <a id="datePickUp"></a></p>
+            <p><b>Destination:</b> Largo da Estação dos Caminhos de Ferro, 3800-179 Aveiro, Portugal <a id="dateDest"></a></p>
+            <p><b>Travel Distance: </b> 2,7Km</p>
+            <p><b>Travel Time: </b> ~7 min.</p>
             
+            <script>
+                const d = new Date();
+                document.getElementById("date").innerHTML =d.toUTCString();
+                const dPickUp = new Date(d.getFullYear(), d.getMonth(),d.getDate(),d.getHours(),d.getMinutes()+5,d.getSeconds());
+                document.getElementById("datePickUp").innerHTML = dPickUp.toUTCString();
+                const dDest = new Date(dPickUp.getFullYear(), dPickUp.getMonth(),dPickUp.getDate(),dPickUp.getHours(),dPickUp.getMinutes()+7,dPickUp.getSeconds());
+                document.getElementById("dateDest").innerHTML = dDest.toUTCString();
+
+            </script>
             <p>Vehicle ID: EB-<a id="vehicle_ID"></a></p>
             <script>
                 document.getElementById("vehicle_ID").innerHTML = Math.floor(Math.random() * 1000000) + 1;;
