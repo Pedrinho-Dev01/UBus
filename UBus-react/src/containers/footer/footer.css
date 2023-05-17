@@ -1,0 +1,168 @@
+.K7__footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--color-footer);
+}
+
+.K7__footer-heading {
+    width: 100%;
+    text-align: center;
+
+    margin-bottom: 3rem;
+}
+
+.K7__footer-heading h1 {
+    font-family: var(--font-family);
+    font-weight: 800;
+    font-size: 62px;
+    line-height: 75px;
+    text-align: center;
+    letter-spacing: -0.04em;
+}
+
+.K7__footer-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    width: 100%;
+    text-align: left;
+}
+
+.K7__footer-links div {
+    width: 250px;
+    margin: 1rem;
+}
+
+.K7__footer-links_logo {
+    display: flex;
+    flex-direction: column;
+}
+
+.K7__footer-links_logo img {
+    width: 150px;
+    height: 38px;
+
+    margin-bottom: 1rem;
+}
+
+.K7__footer-links_logo p{
+    font-family: var(--font-family);
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFF;
+}
+
+.K7__footer-links_div {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.K7__footer-links_div h4 {
+    font-family: var(--font-family);
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFF;
+
+    margin-bottom: 1rem;
+}
+
+.K7__footer-links_div p {
+    font-family: var(--font-family);
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFF;
+
+    margin: 0.5rem 0;
+    cursor: pointer;
+}
+
+.K7__footer-copyright {
+    margin-top: 2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.K7__footer-copyright p {
+    font-family: var(--font-family);
+    font-size: 12px;
+    line-height: 14px;
+    color: #FFF;
+}
+
+
+.section__padding-contacts {
+    padding: 0 6rem;
+}
+
+.K7__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.K7__contacts div {
+    flex: 1;
+    max-width: 100px;
+    min-width: 80px;
+    margin: 5rem 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.K7__contacts img {
+    width: 50px;
+    cursor: pointer;
+}
+
+#UBus-logo {
+    font-size: 35px;
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+
+@media screen and (max-width: 850px) {
+    .K7__footer-heading h1 {
+        font-size: 44px;
+        line-height: 50px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .K7__footer-heading h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+
+    .K7__footer-link div {
+        margin: 1rem 0;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .K7__footer-heading h1 {
+        font-size: 27px;
+        line-height: 38px;
+    }
+}
+
+.not_available {
+    opacity: 0.05;
+}
+
+.Toastify__toast-theme--dark {
+    background-color: #042c54 !important;
+}
+.Toastify__toast-container {
+    width: 300px !important;
+}
