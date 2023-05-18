@@ -9,12 +9,17 @@ const Booking = () => {
       </div>
       <div className='booking-form'>
         <div className='booking-from-to'>
-          <span className='small_margin'>Pick Up:</span>
-          <input className='booking-fillBox'></input>
+          <p className='align_a'>Pick Up:</p>
+          <input className='booking-fillBox' list='pick_up'>
+
+          </input>
         </div>
+        <br></br>
         <div className='booking-from-to'>
-          <span className='small_margin'>Drop Off:</span>
-          <input className='booking-fillBox'></input>
+          <p className='align_a'>Drop Off:</p>
+          <input className='booking-fillBox'>
+            
+          </input>
         </div>
       </div>
       <button className="book-button" type="button">Book</button>
@@ -23,3 +28,4 @@ const Booking = () => {
 }
 
 export default Booking
+
