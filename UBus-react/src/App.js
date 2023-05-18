@@ -32,7 +32,6 @@ const App = () => {
       </div>
       <MapView />
       <Booking />
-      <Possibility />
       <Footer />
       <ToastContainer
       position="bottom-center"

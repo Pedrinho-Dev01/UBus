@@ -6,3 +6,45 @@
     border-radius: 0 0 25px 25px;
     background-color: #292F38;
 }
+
+.booking-fillBox {
+    background-color: white;
+    width: 350px;
+    height: 40px;
+    border-radius: 10px;
+    margin-left: 50px;
+}
+
+.booking-form {
+    margin-left: 50px;
+    padding-top: 30px;
+}
+
+.booking-from-to {
+    color: white;
+    margin: 20px;
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.book-button {
+    width: 100px;
+    height: 35px;
+    border-radius: 35px;
+    background: #007AFF;
+    margin-left: 60px;
+    color: white;
+    font-family: var(--font-family);
+    font-weight: 800;
+    transition: 0.5 ease-in-out;
+}
+.book-button:hover {
+    background-color: white;
+    transition: 0.5 ease-in-out;
+}
+
+.UBus__header-content__input {
+    width: 300px;
+    margin: 2rem 0 1rem;
+}

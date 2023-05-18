@@ -4,12 +4,23 @@ import './booking.css';
 const Booking = () => {
   return (
     <div className='booking-container'>
-      <div className='booking-from'>
-      
-      </div>
-      <div className='booking-to'>
+      <div className='booking-form'>
+        <div className='booking-from-to'>
+          Pick-up: 
+          <input className='booking-fillBox'>
 
+          </input>
+        </div>
+        <div className='booking-from-to'>
+          Drop-off: 
+          <input className='booking-fillBox'>
+
+          </input>
+        </div>
       </div>
+      <div className="UBus__header-content__input">
+          <button className="book-button" type="button">Book</button>
+        </div>
     </div>
   )
 }
