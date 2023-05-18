@@ -3,7 +3,9 @@ import './possibility.css';
 
 const Possibility = () => {
   return (
-    <div>Possibility</div>
+    <div>
+      <h1 id='activity-section' className='section-title'>Activity</h1>
+    </div>
   )
 }
 

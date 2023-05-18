@@ -76,7 +76,7 @@ const MapView = () => {
   ];
 
   return (
-    <MapContainer id='Service-map' center={[40.64052024913085, -8.651716668018748]} zoom={16}>
+    <MapContainer id='Service-map' center={[40.633104877176066, -8.658244586543734]} zoom={15}>
       <TileLayer
         attribution='UBus Service map'
         url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
@@ -112,8 +112,6 @@ const MapView = () => {
           </Popup>
         </Marker>
       )}
-      
-      
     </MapContainer>
   );
 }

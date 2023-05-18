@@ -1,8 +1,13 @@
 #map { height: 180px; }
 
+#Service-map {
+    border-radius: 25px 25px 0 0;
+    margin-left: 80px;
+}
+
 .leaflet-container {
-    height: 100vh;
-    width: 70%;
+    height: 70vh;
+    width: 173vh;
 }
 
 @media screen and (max-width: 650px) {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
-import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView } from './containers';
-import { Navbar } from './components';
+import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking } from './containers';
+import { Navbar, Project } from './components';
 import './App.css';
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -31,6 +31,8 @@ const App = () => {
         <Header />
       </div>
       <MapView />
+      <Booking />
+      <Possibility />
       <Footer />
       <ToastContainer
       position="bottom-center"
