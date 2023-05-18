@@ -4,6 +4,9 @@ import './booking.css';
 const Booking = () => {
   return (
     <div className='booking-container'>
+      <div>
+        
+      </div>
       <div className='booking-form'>
         <div className='booking-from-to'>
           <span className='small_margin'>Pick Up:</span>

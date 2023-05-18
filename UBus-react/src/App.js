@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking } from './containers';
+import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking, Account } from './containers';
 import { Navbar, Project } from './components';
 import './App.css';
 
@@ -32,6 +32,7 @@ const App = () => {
       </div>
       <MapView />
       <Booking />
+      <Account />
       <Footer />
       <ToastContainer
       position="bottom-center"
