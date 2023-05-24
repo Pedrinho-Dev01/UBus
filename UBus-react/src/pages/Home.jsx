@@ -17,7 +17,6 @@ const Home = () => {
     {/*Page Specific Components*/}
     <div className='page-content'>
         <MapView/>
-        <Booking/>
     </div>
     {/*Page Specific Components*/}
 

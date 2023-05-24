@@ -15,7 +15,7 @@ const ActivityPage = () => {
   
       {/*Page Specific Components*/}
       <div className='page-content'>
-          <h1>Activity Page Content</h1>
+          <h1>This Page is not available yet</h1>
       </div>
       {/*Page Specific Components*/}
   

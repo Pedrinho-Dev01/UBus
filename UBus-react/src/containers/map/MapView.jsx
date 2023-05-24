@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useState}from 'react';
 import './map.css';
+import '../booking/booking.css'
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';
@@ -9,6 +10,65 @@ import blueBus from '../../assets/blue_bus.svg'
 import greenBus from '../../assets/green_bus.svg'
 
 const MapView = () => {
+
+  //BOOKING
+  //Pick-up and Drop-off
+  const [SearchPickUp, setPickup] = useState('');
+  const [SearchDropOff, setDropOff] = useState('');
+
+  const handlePickup = event => {
+    setPickup(event.target.value);
+
+    console.log('PICK VALUE:', event.target.value);
+  };
+  const handleDropOff = event => {
+    setDropOff(event.target.value);
+
+    console.log('DROP VALUE:', event.target.value);
+  };
+
+  //Get PickUp Coords
+  const bookPickUp = event => {
+    fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchPickUp}&format=json&limit=1`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        const firstResult = data[0]; // coords of first result
+        const latitudePick = parseFloat(firstResult.lat);
+        const longitudePick = parseFloat(firstResult.lon);
+
+        // Debug
+        console.log('Latitude pick:', latitudePick);
+        console.log('Longitude pick:', longitudePick);
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+    bookDropOff();
+  };
+
+  //Get DropOff coords
+  const bookDropOff = event => {
+    fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchDropOff}&format=json&limit=1`)
+    .then(response => response.json())
+    .then(data => {
+      if (data.length > 0) {
+        const firstResult = data[0]; // coords of first result
+        const latitudeDrop = parseFloat(firstResult.lat);
+        const longitudeDrop = parseFloat(firstResult.lon);
+
+        // Debug
+        console.log('Latitude drop:', latitudeDrop);
+        console.log('Longitude drop:', longitudeDrop);
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
+  };
+  //BOOKING
+
   const [latitude, setLatitude] = React.useState('');
   const [longitude, setLongitude] = React.useState('');
 
@@ -78,6 +138,9 @@ const MapView = () => {
     [40.64421249702104, -8.735694675047998],
     [40.64391352080412, -8.747896411621449],
     [40.62541443476722, -8.750828350311439],
+    [40.62219578575626, -8.725369020204145],
+    [40.6243249576032, -8.697633348180029],
+    [40.635243749876615, -8.664884483495758]
   ];
   // Red Zone
   const redZone = [
@@ -90,9 +153,9 @@ const MapView = () => {
     [40.63619703310239, -8.654885581455739],
     [40.63117073448362, -8.652598554904793],
   ];
-  
 
   return (
+    <div>
     <MapContainer id='Service-map' center={[40.633104877176066, -8.658244586543734]} zoom={14}>
       <TileLayer
         attribution='UBus Service map'
@@ -136,6 +199,31 @@ const MapView = () => {
         </Marker>
       )}
     </MapContainer>
+    
+    {/*BOOKING*/}
+    <div className='booking-container'>
+      <div>
+        
+      </div>
+      <div className='booking-form'>
+        <div className='booking-from-to'>
+          <p className='align_a'>Pick Up:</p>
+          <input type="text" id="pick_up" onChange={handlePickup} value={SearchPickUp} className='booking-fillBox' list='pick_up'>
+
+          </input>
+        </div>
+        <br></br>
+        <div className='booking-from-to'>
+          <p className='align_a'>Drop Off:</p>
+          <input type="text" id='drop-off' onChange={handleDropOff} value={SearchDropOff} className='booking-fillBox'>
+            
+          </input>
+        </div>
+      </div>
+      <button className="book-button" type="button" onClick={bookPickUp}>Book</button>
+    </div>
+    {/*BOOKING*/}
+    </div>
   );
 }
 
