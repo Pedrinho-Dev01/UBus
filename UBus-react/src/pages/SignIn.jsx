@@ -15,8 +15,10 @@ const SignInPage = () => {
       {/*Navbar + Header*/}
   
       {/*Page Specific Components*/}
-      <div className='page-content'>
-          <h1>Sign In Page Content</h1>
+      <div className='modal-content gradient__bg'>
+          <input type="text" placeholder="Username" className='signin-input'/>
+          <input type="password" placeholder="Password" className='signin-input'/>
+          <button className='signin-btn'>Sign In</button>
       </div>
       {/*Page Specific Components*/}
   

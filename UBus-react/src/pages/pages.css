@@ -1,0 +1,42 @@
+.signin-main {
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.signin-input {
+    width: 50%;
+    height: 50px;
+    border: 2px solid #007AFF;
+    background-color: #040C18;
+    border-radius: 5px;
+    padding: 0 1rem;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    color: #fff;
+    outline: none;
+}
+
+.searchBtn {
+    width: 10%;
+    height: 50px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    background: #007AFF;
+    border: 2px solid #007AFF;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1rem;
+
+    border-radius: 5px;
+}
