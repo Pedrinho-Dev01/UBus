@@ -16,7 +16,7 @@ const Account = () => {
         <table border={1} class="center">
           <tr>
           <td>
-          <img src={steering_wheel} style={{width: "50px"}}/>
+          <img src={steering_wheel} alt='steering' style={{width: "50px"}}/>
           </td>
           <td>
             <b>Driver Mode</b>
@@ -30,7 +30,7 @@ const Account = () => {
           </tr>
           <tr>
             <td>
-              <img src={wallet} style={{width: "50px"}}/>
+              <img src={wallet} alt='wallet' style={{width: "50px"}}/>
             </td>
             <td>
               <b>Balance</b>
@@ -41,7 +41,7 @@ const Account = () => {
           </tr>
           <tr>
             <td>
-              <img src={letter} style={{width: "50px"}}/>
+              <img src={letter} alt='letter' style={{width: "50px"}}/>
             </td>
             <td colspan="2">
               <b>Messages</b>
@@ -50,7 +50,7 @@ const Account = () => {
           </tr>
           <tr>
             <td>
-              <img src={gift} style={{width: "50px"}}/>
+              <img src={gift} alt='gift' style={{width: "50px"}}/>
             </td>
             <td colspan="2">
               <b>Send a gift</b>
@@ -59,7 +59,7 @@ const Account = () => {
           </tr>
           <tr>
             <td>
-              <img src={discount} style={{width: "50px"}}/>
+              <img src={discount} alt='discount' style={{width: "50px"}}/>
             </td>
             <td colspan="2">
               <b>Promotions</b>
@@ -68,7 +68,7 @@ const Account = () => {
           </tr>
           <tr>
             <td>
-              <img src={settings} style={{width: "50px"}}/>
+              <img src={settings} alt='settings' style={{width: "50px"}}/>
             </td>
             <td colspan="2">
               <b>Settings</b>

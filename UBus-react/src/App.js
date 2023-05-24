@@ -1,52 +1,22 @@
-import React, { useState } from 'react'
-
-import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking, Account } from './containers';
-import { Navbar, Project } from './components';
+import React from 'react'
 import './App.css';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+//pages
+import Home from './pages/Home'
+import SignInPage from './pages/SignIn'
+import SignUpPage from './pages/SignUp'
 
 const App = () => {
-  const [latitude, setLatitude] = React.useState('');
-  const [longitude, setLongitude] = React.useState('');
-
-  React.useEffect(() => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      setLatitude(position.coords.latitude)
-      setLongitude(position.coords.longitude)
-    })
-  })
-
-  const [viewPort, setViewPort] = useState({
-    latitude: 49,
-    longitude: -8,
-    zoom: 5,
-  });
-
   return (
     <div className='App'>
-      <div className='gradient__bg'>
-        <Navbar />
-        <Header />
-      </div>
-      <MapView />
-      <Booking />
-      <Account />
-      <Footer />
-      <ToastContainer
-      position="bottom-center"
-      autoClose={1500}
-      hideProgressBar
-      newestOnTop={false}
-      closeOnClick={false}
-      rtl={false}
-      pauseOnFocusLoss={false}
-      draggable={false}
-      pauseOnHover
-      theme="dark"
-      limit={1}
-      />
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<Home/>}/>
+            <Route path='/sign-in' element={<SignInPage/>}/>
+            <Route path='/sign-up' element={<SignUpPage/>}/>
+          </Routes>
+        </BrowserRouter>
     </div>
   )
 }
