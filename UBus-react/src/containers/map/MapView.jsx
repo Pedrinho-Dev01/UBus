@@ -67,6 +67,7 @@ const MapView = () => {
         .catch(error => {
           reject(error);
         });
+        bookDropOff();
     });
   };
 
