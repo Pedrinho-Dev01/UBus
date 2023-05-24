@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css'
 
-import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking, Account , SignIn} from '../containers';
+import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking} from '../containers';
 import { Navbar, Project } from '../components';
 
 const Home = () => {
@@ -18,7 +18,6 @@ const Home = () => {
     <div className='page-content'>
         <MapView/>
         <Booking/>
-        <Account/>
     </div>
     {/*Page Specific Components*/}
 
