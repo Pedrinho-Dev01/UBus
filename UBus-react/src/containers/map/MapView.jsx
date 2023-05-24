@@ -6,6 +6,8 @@ import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';
 
 import pin from '../../assets/pin.svg'
+import yellowpin from '../../assets/yellowpin.svg'
+import redpin from '../../assets/redpin.svg'
 import blueBus from '../../assets/blue_bus.svg'
 import greenBus from '../../assets/green_bus.svg'
 
@@ -15,6 +17,13 @@ const MapView = () => {
   //Pick-up and Drop-off
   const [SearchPickUp, setPickup] = useState('');
   const [SearchDropOff, setDropOff] = useState('');
+
+  const [latitudePick, setLatitudePick] = useState(null);
+  const [longitudePick, setLongitudePick] = useState(null);
+
+  const [latitudeDrop, setLatitudeDrop] = useState(null);
+  const [longitudeDrop, setLongitudeDrop] = useState(null);
+
 
   const handlePickup = event => {
     setPickup(event.target.value);
@@ -27,46 +36,71 @@ const MapView = () => {
     console.log('DROP VALUE:', event.target.value);
   };
 
+  const pickUpMarkerRef = React.useRef();
+  const dropOffMarkerRef = React.useRef();
+
   //Get PickUp Coords
   const bookPickUp = event => {
-    fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchPickUp}&format=json&limit=1`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.length > 0) {
-        const firstResult = data[0]; // coords of first result
-        const latitudePick = parseFloat(firstResult.lat);
-        const longitudePick = parseFloat(firstResult.lon);
-
-        // Debug
-        console.log('Latitude pick:', latitudePick);
-        console.log('Longitude pick:', longitudePick);
-      }
-    })
-    .catch(error => {
-      console.log('Error:', error);
+    return new Promise((resolve, reject) => {
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchPickUp}&format=json&limit=1`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            const firstResult = data[0]; // coords of first result
+            const latitudePick = parseFloat(firstResult.lat);
+            const longitudePick = parseFloat(firstResult.lon);
+  
+            // Debug
+            console.log('Latitude pick:', latitudePick);
+            console.log('Longitude pick:', longitudePick);
+  
+            // Update state variables with the obtained coordinates
+            setLatitudePick(latitudePick);
+            setLongitudePick(longitudePick);
+  
+            // Resolve with the coordinates
+            resolve({ latitudePick, longitudePick });
+          } else {
+            reject('No results found');
+          }
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
-    bookDropOff();
   };
 
   //Get DropOff coords
   const bookDropOff = event => {
-    fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchDropOff}&format=json&limit=1`)
-    .then(response => response.json())
-    .then(data => {
-      if (data.length > 0) {
-        const firstResult = data[0]; // coords of first result
-        const latitudeDrop = parseFloat(firstResult.lat);
-        const longitudeDrop = parseFloat(firstResult.lon);
-
-        // Debug
-        console.log('Latitude drop:', latitudeDrop);
-        console.log('Longitude drop:', longitudeDrop);
-      }
-    })
-    .catch(error => {
-      console.log('Error:', error);
+    return new Promise((resolve, reject) => {
+      fetch(`https://nominatim.openstreetmap.org/search.php?q=${SearchDropOff}&format=json&limit=1`)
+        .then(response => response.json())
+        .then(data => {
+          if (data.length > 0) {
+            const firstResult = data[0]; // coords of first result
+            const latitudeDrop = parseFloat(firstResult.lat);
+            const longitudeDrop = parseFloat(firstResult.lon);
+  
+            // Debug
+            console.log('Latitude drop:', latitudeDrop);
+            console.log('Longitude drop:', longitudeDrop);
+  
+            // Update state variables with the obtained coordinates
+            setLatitudeDrop(latitudeDrop);
+            setLongitudeDrop(longitudeDrop);
+  
+            // Resolve with the coordinates
+            resolve({ latitudeDrop, longitudeDrop });
+          } else {
+            reject('No results found');
+          }
+        })
+        .catch(error => {
+          reject(error);
+        });
     });
   };
+  
   //BOOKING
 
   const [latitude, setLatitude] = React.useState('');
@@ -87,6 +121,20 @@ const MapView = () => {
   // Create a custom icon for the marker
   const pinIcon = new L.Icon({
     iconUrl: pin, 
+    iconSize: [50, 70],
+    iconAnchor: [28, 94],
+    popupAnchor: [-3, -76],
+  });
+
+  const pinYellowIcon = new L.Icon({
+    iconUrl: yellowpin, 
+    iconSize: [50, 70],
+    iconAnchor: [28, 94],
+    popupAnchor: [-3, -76],
+  });
+
+  const pinRedIcon = new L.Icon({
+    iconUrl: redpin,
     iconSize: [50, 70],
     iconAnchor: [28, 94],
     popupAnchor: [-3, -76],
@@ -178,6 +226,24 @@ const MapView = () => {
           </Popup>
         </Marker>
       )}
+      {latitudePick && longitudePick && (
+          <Marker position={[latitudePick, longitudePick]} icon={pinYellowIcon} ref={pickUpMarkerRef}>
+            <Popup>
+              <div>
+                <h3>Your Origin</h3>
+              </div>
+            </Popup>
+          </Marker>
+        )}
+      {latitudeDrop && longitudeDrop && (
+          <Marker position={[latitudeDrop, longitudeDrop]} icon={pinRedIcon} ref={dropOffMarkerRef}>
+            <Popup>
+              <div>
+                <h3>Your Destination</h3>
+              </div>
+            </Popup>
+          </Marker>
+        )}
       {40.632961377687764 && -8.658731556446646 && (
         <Marker position={[40.64300956446386, -8.646257360793522]} icon={greenBusIcon}>
           <Popup>
