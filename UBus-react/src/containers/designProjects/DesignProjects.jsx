@@ -7,7 +7,7 @@ const DesignProjects = () => {
   return (
       <div className='K7__projects section__padding' id='design'>
         <div className='K7__projects-heading'>
-          <h1 className='gradient__text'>Design</h1>
+          <h1 className='gradient__text'>TableView</h1>
         </div>
         <div className='K7__projects-container'>
           <div className='K7__projects-container_groupA'>
