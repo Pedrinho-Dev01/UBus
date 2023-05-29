@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/UBus/static/css/main.b1e8847a.css",
+    "main.js": "/UBus/static/js/main.b0c75bea.js",
+    "static/media/homeIMG.jpg": "/UBus/static/media/homeIMG.4c0e628f5a42842c2b84.jpg",
+    "static/media/settings.svg": "/UBus/static/media/settings.10bae83a0faf4507f25dc6bfd47cecab.svg",
+    "static/media/discount.svg": "/UBus/static/media/discount.c9884e44083e481a7297eab698de3f4c.svg",
+    "static/media/gift.svg": "/UBus/static/media/gift.93a4906ea90b9115c3e57dbd5ca1bb33.svg",
+    "static/media/steering_wheel.svg": "/UBus/static/media/steering_wheel.c150e5e8a67a66d180c546731a5f6b7e.svg",
+    "static/media/wallet.svg": "/UBus/static/media/wallet.4d7d9877e20f6ccb866e6993fe493124.svg",
+    "static/media/letter.svg": "/UBus/static/media/letter.61cfadb75f0170be9a7f367637cfe045.svg",
+    "static/media/blue_bus.svg": "/UBus/static/media/blue_bus.739f27fd48670d697df323264ce54e6d.svg",
+    "static/media/green_bus.svg": "/UBus/static/media/green_bus.e203ff88baa66ca7e5b0eb3c141cec79.svg",
+    "static/media/yellowpin.svg": "/UBus/static/media/yellowpin.2bfb595f599aeaeeba8de8c387e3350f.svg",
+    "static/media/redpin.svg": "/UBus/static/media/redpin.6c3d1b679ccb3ce3feaac9c79654acdb.svg",
+    "static/media/pin.svg": "/UBus/static/media/pin.c9006a317554718fd99b90b8ac340583.svg",
+    "index.html": "/UBus/index.html",
+    "main.b1e8847a.css.map": "/UBus/static/css/main.b1e8847a.css.map",
+    "main.b0c75bea.js.map": "/UBus/static/js/main.b0c75bea.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b1e8847a.css",
+    "static/js/main.b0c75bea.js"
+  ]
+}
