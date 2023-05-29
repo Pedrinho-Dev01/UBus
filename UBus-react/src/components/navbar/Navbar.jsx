@@ -4,9 +4,9 @@ import './navbar.css';
 
 const Menu = () => (
   <>
-  <p><a href='/'>Service</a></p>
-  <p><a href='/activity'>Activity</a></p>
-  <p><a href='/account'>Account</a></p>
+  <p><a href='#/'>Service</a></p>
+  <p><a href='#/activity'>Activity</a></p>
+  <p><a href='#/account'>Account</a></p>
   </>
 )
 
@@ -73,17 +73,17 @@ const Navbar = () => {
     <div className="K7__navbar">
       <div className="K7__navbar-links">
         <div className="K7__navbar-links_logo">
-          <a href='/'><p className='ubus_logo'>UBus</p></a>
+          <a href='#/'><p className='ubus_logo'>UBus</p></a>
         </div>
         <div className='K7__navbar-links_container'>
           <Menu />
         </div>
       </div>
       <div className="K7__navbar-sign">
-        <a href="#" onClick={openSignInModal}>
+        <a onClick={openSignInModal}>
           <p>Sign in</p>
         </a>
-        <a href="/sign-up"> 
+        <a href="#/sign-up"> 
           <button type="button">Sign up</button>
         </a>
       </div>
@@ -96,8 +96,8 @@ const Navbar = () => {
             <div className='K7__navbar-menu_container-links'>
               <Menu />
               <div className='K7__navbar-menu_container-links-sign'>
-                <a href='/sign-in'><p>Sign in</p></a>
-                <a href='/sign-up'><button type='button'>Sign up</button></a>
+                <a><p>Sign in</p></a>
+                <a href='#/sign-up'><button type='button'>Sign up</button></a>
               </div>
             </div>
           </div>
