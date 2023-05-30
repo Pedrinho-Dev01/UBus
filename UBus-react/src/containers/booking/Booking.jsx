@@ -70,7 +70,6 @@ const Booking = () => {
           <input type="text" id="pick_up" onChange={handlePickup} value={SearchPickUp} className='booking-fillBox' list='pick_up'>
 
           </input>
-          <h2>Debug: {SearchPickUp}</h2>
         </div>
         <br></br>
         <div className='booking-from-to'>

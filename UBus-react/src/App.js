@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import SignUpPage from './pages/SignUp'
 import AccountPage from './pages/AccountPage';
 import ActivityPage from './pages/AcitivyPage';
+import TicketPage from './pages/TicketPage';
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
             <Route path='/sign-up' element={<SignUpPage/>}/>
             <Route path='/activity' element={<ActivityPage/>}/>
             <Route path='/account' element={<AccountPage/>}/>
+            <Route path='/ticket' element={<TicketPage/>}/>
           </Routes>
         </HashRouter>
     </div>

@@ -5,6 +5,9 @@ import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';
 
+import BookingForm from '../../components/bookingForm/BookingForm';
+
+
 // pin import
 import pin from '../../assets/pins/pin.svg'
 import yellowpin from '../../assets/pins/yellowpin.svg'
@@ -107,9 +110,19 @@ const MapView = () => {
         .catch(error => {
           reject(error);
         });
+        openModal();
     });
   };
-  
+
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
   //BOOKING
 
   const [latitude, setLatitude] = React.useState('');
@@ -440,7 +453,9 @@ const MapView = () => {
       </div>
       <button className="book-button" type="button" onClick={bookPickUp}>Book</button>
     </div>
+    <BookingForm isOpen={isModalOpen} onClose={closeModal} />
     {/*BOOKING*/}
+        
     </div>
   );
 }

@@ -50,10 +50,12 @@
     font-family: var(--font-family);
     font-weight: 800;
     transition: 0.5 ease-in-out;
+    margin-top: 20px;
 }
 .book-button:hover {
     background-color: #040C18;
     transition: 0.5 ease-in-out;
+    cursor: pointer;
 }
 
 .UBus__header-content__input {
