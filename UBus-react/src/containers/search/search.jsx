@@ -8,9 +8,12 @@ const Search = ({onClose}) => {
   };
 
   const handleSearch = () => {
-    // Perform search logic
-    // Retrieve search query and call onSearch function
-    const searchQuery = document.getElementById('search-input').value;
+
+    // create a search that checks if the search input is one of the buses in the list
+
+    // close the modal search window and scroll down to the map
+    onClose();
+    document.getElementById("Service-map").scrollIntoView({behavior: "smooth"});
   };
 
 

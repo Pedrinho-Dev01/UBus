@@ -5,11 +5,19 @@ import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';
 
-import pin from '../../assets/pin.svg'
-import yellowpin from '../../assets/yellowpin.svg'
-import redpin from '../../assets/redpin.svg'
-import blueBus from '../../assets/blue_bus.svg'
-import greenBus from '../../assets/green_bus.svg'
+// pin import
+import pin from '../../assets/pins/pin.svg'
+import yellowpin from '../../assets/pins/yellowpin.svg'
+import redpin from '../../assets/pins/redpin.svg'
+
+// bus import
+import blueBus from '../../assets/bus/blue_bus.svg'
+import greenBus from '../../assets/bus/green_bus.svg'
+import orangeBus from '../../assets/bus/orange_bus.svg'
+import purpleBus from '../../assets/bus/purple_bus.svg'
+import redBus from '../../assets/bus/red_bus.svg'
+import yellowBus from '../../assets/bus/yellow_bus.svg'
+import whiteBus from '../../assets/bus/white_bus.svg'
 
 const MapView = () => {
 
@@ -157,6 +165,46 @@ const MapView = () => {
     popupAnchor: [-3, -76],
   });
 
+  // Create a custom icon for the orange bus
+  const orangeBusIcon = new L.Icon({
+    iconUrl: orangeBus,
+    iconSize: [50, 55],
+    iconAnchor: [27, 100],
+    popupAnchor: [-3, -76],
+  });
+
+  // Create a custom icon for the purple bus
+  const purpleBusIcon = new L.Icon({
+    iconUrl: purpleBus,
+    iconSize: [50, 55],
+    iconAnchor: [27, 100],
+    popupAnchor: [-3, -76],
+  });
+
+  // Create a custom icon for the red bus
+  const redBusIcon = new L.Icon({
+    iconUrl: redBus,
+    iconSize: [50, 55],
+    iconAnchor: [27, 100],
+    popupAnchor: [-3, -76],
+  });
+
+  // Create a custom icon for the yellow bus
+  const yellowBusIcon = new L.Icon({
+    iconUrl: yellowBus,
+    iconSize: [50, 55],
+    iconAnchor: [27, 100],
+    popupAnchor: [-3, -76],
+  });
+
+  // Create a custom icon for the white bus
+  const whiteBusIcon = new L.Icon({
+    iconUrl: whiteBus,
+    iconSize: [50, 55],
+    iconAnchor: [27, 100],
+    popupAnchor: [-3, -76],
+  });
+
   // Green Zone
   const greenZone = [
     [40.64530177173163, -8.66153040044164],
@@ -193,14 +241,64 @@ const MapView = () => {
   ];
   // Red Zone
   const redZone = [
-    [40.62347245011394, -8.648290316265701],
-    [40.627279420129284, -8.638115239169977],
-    [40.63543648229332, -8.632311145897065],
-    [40.640522787176565, -8.632534970832504],
-    [40.64094402411233, -8.649605084869565],
-    [40.64070631242284, -8.656114141806631],
-    [40.63619703310239, -8.654885581455739],
-    [40.63117073448362, -8.652598554904793],
+    [40.640475377017346, -8.656496976974665],
+    [40.64095805877481, -8.65536406062215],
+    [40.64103556938245, -8.654927609240444],
+    [40.641084894267735, -8.653441817302722],
+    [40.640901687367275, -8.6531632313144],
+    [40.64071847996397, -8.652921790124518],
+    [40.640450714393154, -8.652113890758383],
+    [40.640239319762735, -8.651677439376678],
+    [40.63921052300461, -8.650423802429223],
+    [40.637110600918724, -8.653172517514014], 
+    [40.63544752851982, -8.655224767627997]
+  ];
+
+  // Yellow Zone
+  const yellowZone = [
+    [40.64118354394031, -8.653265379510106],
+    [40.6411923519456, -8.65246212324377],
+    [40.64124872310983, -8.651709941075293],
+    [40.64137555805044, -8.651124910499812],
+    [40.64151296229747, -8.650391300730563],
+    [40.6414988695672, -8.650075569943798],
+    [40.64117121275269, -8.649128377583489],
+    [40.64088583290807, -8.648989084589338],
+    [40.64060397508933, -8.648524774608799],
+    [40.640100151267546, -8.648854434694986],
+    [40.63928627397844, -8.65034951283233],
+    [40.63983590648121, -8.651078479501782],
+    [40.64042076686771, -8.651779587572397],
+    [40.640505324574335, -8.652030314961895],
+    [40.64071319514035, -8.652824285028617],
+    [40.64085412396788, -8.65303322451986],
+    [40.64116416634117, -8.653390743204874]
+
+  ];
+
+  // White Zone
+  const whiteZone = [
+    [40.63448866495435, -8.644714998918344],
+    [40.638956381030845, -8.650305291461159],
+    [40.640189994260375, -8.648603707305485],
+    [40.6417608828687, -8.647147983353886],
+    [40.64137379644298, -8.647507935751415],
+    [40.640971688241336, -8.642579172837166]
+  ];
+
+  // Purple Zone
+  const purpleZone = [
+    [40.63052149046325, -8.654361151064151],
+    [40.627998428921856, -8.65248533874277],
+    [40.62654656822902, -8.652113890758338],
+    [40.625052387376236, -8.650850967611277],
+    [40.62457311473897, -8.64994092004942],
+    [40.62725135891515, -8.647600797747508],
+    [40.63105400059688, -8.641874993107102],
+    [40.634099155824245, -8.64335557248334],
+    [40.63445740024363, -8.644793236515314],
+    [40.63911440279814, -8.65050097729897],
+    [40.63540185360149, -8.655457699558461]
   ];
 
   return (
@@ -212,10 +310,13 @@ const MapView = () => {
       />
 
       {/*Map Zones*/}
-      <Polygon positions={greenZone} color="#FFFFFF" fillColor="#108915" fillOpacity={0.15} weight={0.4} />
-      <Polygon positions={blueZone} color="#FFFFFF" fillColor="#2D46A2" fillOpacity={0.15} weight={0.4} />
-      <Polygon positions={orangeZone} color="#FFFFFF" fillColor="#FF8A00" fillOpacity={0.15} weight={0.4} />
-      <Polygon positions={redZone} color="#FFFFFF" fillColor="#cc0e0e" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={greenZone} color="#FFFFFF" fillColor="green" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={blueZone} color="#FFFFFF" fillColor="blue" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={orangeZone} color="#FFFFFF" fillColor="orange" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={redZone} color="#FFFFFF" fillColor="red" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={yellowZone} color="#FFFFFF" fillColor="yellow" fillOpacity={0.15} weight={0.4} />
+      <Polygon positions={whiteZone} color="#FFFFFF" fillColor="white" fillOpacity={0.35} weight={0.4} />
+      <Polygon positions={purpleZone} color="#FFFFFF" fillColor="purple" fillOpacity={0.15} weight={0.4} />
 
 
       {latitude && longitude && (
@@ -260,6 +361,56 @@ const MapView = () => {
           <Popup>
             <div>
               <h3>Bus #18</h3>
+              <p>A x minutos</p>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+      {40.63175423575738 && -8.649041855594866 && (
+        <Marker position={[40.63175423575738, -8.649041855594866]} icon={purpleBusIcon}>
+          <Popup>
+            <div>
+              <h3>Bus #23</h3>
+              <p>A x minutos</p>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+      {40.63932607707873 & -8.646638596317505 && (
+        <Marker position={[40.63932607707873, -8.646638596317505]} icon={whiteBusIcon}>
+          <Popup>
+            <div>
+              <h3>Bus #37</h3>
+              <p>A x minutos</p>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+      {40.6396842934616 & -8.650565350315313 && (
+        <Marker position={[40.6396842934616, -8.650565350315313]} icon={yellowBusIcon}>
+          <Popup>
+            <div>
+              <h3>Bus #42</h3>
+              <p>A x minutos</p>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+      {40.63903298953629 & -8.654792511722755 && (
+        <Marker position={[40.63903298953629, -8.654792511722755]} icon={redBusIcon}>
+          <Popup>
+            <div>
+              <h3>Bus #45</h3>
+              <p>A x minutos</p>
+            </div>
+          </Popup>
+        </Marker>
+      )}
+      {40.634587670470864 & -8.675649369022553 && (
+        <Marker position={[40.634587670470864, -8.675649369022553]} icon={orangeBusIcon}>
+          <Popup>
+            <div>
+              <h3>Bus #49</h3>
               <p>A x minutos</p>
             </div>
           </Popup>
