@@ -4,6 +4,7 @@ import '../booking/booking.css'
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';
+import { useNavigate } from 'react-router-dom';
 
 import BookingForm from '../../components/bookingForm/BookingForm';
 
@@ -24,6 +25,8 @@ import whiteBus from '../../assets/bus/white_bus.svg'
 
 const MapView = () => {
 
+  const navigate = useNavigate();
+
   //BOOKING
   //Pick-up and Drop-off
   const [SearchPickUp, setPickup] = useState('');
@@ -34,6 +37,9 @@ const MapView = () => {
 
   const [latitudeDrop, setLatitudeDrop] = useState(null);
   const [longitudeDrop, setLongitudeDrop] = useState(null);
+
+  const [pickAddress, setPickAddress] = useState('');
+  const [dropAddress, setDropAddress] = useState('');
 
 
   const handlePickup = event => {
@@ -58,16 +64,19 @@ const MapView = () => {
         .then(data => {
           if (data.length > 0) {
             const firstResult = data[0]; // coords of first result
+            const pickAddress = firstResult.display_name;
             const latitudePick = parseFloat(firstResult.lat);
             const longitudePick = parseFloat(firstResult.lon);
   
             // Debug
             console.log('Latitude pick:', latitudePick);
             console.log('Longitude pick:', longitudePick);
+            console.log('Pick Address: ', pickAddress)
   
             // Update state variables with the obtained coordinates
             setLatitudePick(latitudePick);
             setLongitudePick(longitudePick);
+            setPickAddress(pickAddress);
   
             // Resolve with the coordinates
             resolve({ latitudePick, longitudePick });
@@ -90,16 +99,19 @@ const MapView = () => {
         .then(data => {
           if (data.length > 0) {
             const firstResult = data[0]; // coords of first result
+            const dropAddress = firstResult.display_name;
             const latitudeDrop = parseFloat(firstResult.lat);
             const longitudeDrop = parseFloat(firstResult.lon);
   
             // Debug
             console.log('Latitude drop:', latitudeDrop);
             console.log('Longitude drop:', longitudeDrop);
+            console.log('Drop Address: ', dropAddress)
   
             // Update state variables with the obtained coordinates
             setLatitudeDrop(latitudeDrop);
             setLongitudeDrop(longitudeDrop);
+            setDropAddress(dropAddress);
   
             // Resolve with the coordinates
             resolve({ latitudeDrop, longitudeDrop });
@@ -118,6 +130,13 @@ const MapView = () => {
 
   const openModal = () => {
     setIsModalOpen(true);
+
+    navigate('#', {
+      state: {
+        SearchDropOff,
+        SearchPickUp
+      },
+    });
   };
 
   const closeModal = () => {
@@ -453,7 +472,12 @@ const MapView = () => {
       </div>
       <button className="book-button" type="button" onClick={bookPickUp}>Book</button>
     </div>
-    <BookingForm isOpen={isModalOpen} onClose={closeModal} />
+    <BookingForm 
+      isOpen={isModalOpen} 
+      onClose={closeModal} 
+      pickAddress={pickAddress}
+      dropAddress={dropAddress}
+    />
     {/*BOOKING*/}
         
     </div>

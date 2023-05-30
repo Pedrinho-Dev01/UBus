@@ -10,6 +10,7 @@ import ActivityPage from './pages/AcitivyPage';
 import TicketPage from './pages/TicketPage';
 
 const App = () => {
+
   return (
     <div className='App'>
         <HashRouter>

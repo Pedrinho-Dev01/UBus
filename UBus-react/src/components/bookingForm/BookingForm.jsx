@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import './bookingForm.css'
 import { useNavigate } from 'react-router-dom';
-import ConfirmationPage from '../../pages/TicketPage';
 
-function ModalWindow({ isOpen, onClose, history }) {
+function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
     const navigate = useNavigate();
     const [passengerName, setPassengerName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
@@ -47,6 +46,8 @@ function ModalWindow({ isOpen, onClose, history }) {
             selectedDate,
             selectedHour,
             selectedPaymentMethod,
+            pickAddress,
+            dropAddress
           },
         });
       };
