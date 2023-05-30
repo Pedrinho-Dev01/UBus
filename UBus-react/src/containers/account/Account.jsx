@@ -13,7 +13,7 @@ const Account = () => {
       <h1 id='account-section' className='section-title'>Account</h1>
       <h2 id='account_id'></h2>
       <div class="table">
-        <table border={1} class="center">
+        <table class="center">
           <tr>
           <td>
           <img src={steering_wheel} alt='steering' style={{width: "50px"}}/>

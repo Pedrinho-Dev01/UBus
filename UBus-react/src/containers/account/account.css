@@ -18,6 +18,10 @@ table.center {
     text-align: center;
 }
 
+table.center tr:hover {
+  background-color: #1a436e;
+}
+
 /* Toggle switch */
 .switch {
     position: relative;
