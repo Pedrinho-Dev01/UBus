@@ -208,7 +208,7 @@ const MapView = () => {
     <MapContainer id='Service-map' center={[40.633104877176066, -8.658244586543734]} zoom={14}>
       <TileLayer
         attribution='UBus Service map'
-        url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
+        //url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png'
       />
 
       {/*Map Zones*/}
