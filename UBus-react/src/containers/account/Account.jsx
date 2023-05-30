@@ -1,11 +1,11 @@
 import React from 'react';
 import './account.css';
-import steering_wheel from '../../assets/steering_wheel.svg'
-import wallet from '../../assets/wallet.svg'
-import gift from '../../assets/gift.svg'
-import letter from '../../assets/letter.svg'
-import discount from '../../assets/discount.svg'
-import settings from '../../assets/settings.svg'
+import steering_wheel from '../../assets/account_icons/steering_wheel.svg'
+import wallet from '../../assets/account_icons/wallet.svg'
+import gift from '../../assets/account_icons/gift.svg'
+import letter from '../../assets/account_icons/letter.svg'
+import discount from '../../assets/account_icons/discount.svg'
+import settings from '../../assets/account_icons/settings.svg'
 
 const Account = () => {
   return (

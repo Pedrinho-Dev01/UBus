@@ -44,7 +44,7 @@ const SignInModal = ({ closeModal }) => {
             onChange={(e) => setPassword(e.target.value)}
           />
           <h5 id='extra-signin'>
-              Don't have an account? <a href="/sign-up"><u>Sign Up</u></a> 
+          <a href="#/sign-up">Don't have an account? <u>Sign Up</u></a> 
           </h5>
           <button type="submit" className='signin-btn'>Sign In</button>
         </form>
