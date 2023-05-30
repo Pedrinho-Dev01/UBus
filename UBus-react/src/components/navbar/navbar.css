@@ -201,6 +201,11 @@
     border-radius: 5px;
  }
 
+ .close-modal:hover {
+    background-color: #1a436e;
+    border: 2px solid #1a436e;
+}
+
  .signin-btn {
     width: 30%;
     height: 50px;
@@ -218,9 +223,23 @@
     border-radius: 5px;
  }
 
+.signin-btn:hover {
+    background-color: #1a436e;
+    border: 2px solid #1a436e;
+}
+
  #extra-signin  {
    margin-bottom: 4%;
    text-align: left;
    font-size: 15px;
  }
-  
+
+ #extra-signin:hover {
+   color: #007aff;
+   cursor: pointer;
+ }  
+
+ .navbar-signup:hover {
+    background-color: #1a436e;
+    cursor: pointer;
+ }

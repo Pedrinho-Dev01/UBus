@@ -107,3 +107,25 @@
         line-height: 24px;
     }
 }
+
+.searchBtn {
+    width: 10%;
+    height: 50px;
+    font-family: var(--font-family);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 28px;
+    background: #007AFF;
+    border: 2px solid #007AFF;
+    padding: 0 1rem;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1rem;
+    border-radius: 5px;
+}
+
+.searchBtn:hover {
+    background-color: #1a436e;
+    border: 2px solid #1a436e;
+}

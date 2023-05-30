@@ -84,7 +84,7 @@ const Navbar = () => {
           <p>Sign in</p>
         </a>
         <a href="#/sign-up"> 
-          <button type="button">Sign up</button>
+          <button type="button" className='navbar-signup'>Sign up</button>
         </a>
       </div>
       <div className='K7__navbar-menu'>

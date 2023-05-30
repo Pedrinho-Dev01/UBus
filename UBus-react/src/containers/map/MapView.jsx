@@ -305,7 +305,7 @@ const MapView = () => {
     <div>
     <MapContainer id='Service-map' center={[40.633104877176066, -8.658244586543734]} zoom={14}>
       <TileLayer
-        attribution='UBus Service map'
+        attribution='UBus Service Map'
         url='https://tile.jawg.io/jawg-dark/{z}/{x}/{y}{r}.png?access-token=ELDvRhqiQitxaWHNIQ08C4XVRqqAZ6Tw6nxE2zAtzNrJx7UcQNvGAGtRKbrJE34u'
       />
 

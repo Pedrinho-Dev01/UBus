@@ -28,7 +28,7 @@ const Header = () => {
         <p>Search for Real-time information on our routes and buses.</p>
 
         <div className="K7__header-content__input">
-          <button type="button" onClick={openModal}>Search</button>
+          <button type="button" className='searchBtn' onClick={openModal}>Search</button>
         </div>
       </div>
 
