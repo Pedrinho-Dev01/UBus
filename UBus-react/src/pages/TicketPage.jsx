@@ -1,20 +1,18 @@
 import React from 'react';
 import '../App.css'
+import './pages.css'
 
-import { Footer, Header, MapView, Ticket} from '../containers';
-import { Navbar } from '../components';
+import { Footer, Ticket} from '../containers';
 
 const TicketPage = () => {
   return (
     <>
-    {/*Navbar + Header*/}
-    <div className='gradient__bg'>
-        <Navbar/>
+    <div className='logo-container'>
+      <a href='/' className='logo'><h1>UBus</h1></a>
+      <p>Ticket delivery page</p>
     </div>
-    {/*Navbar + Header*/}
-
     {/*Page Specific Components*/}
-    <div className='page-content'>
+    <div className='page-content' id='ticket-container'>
         <Ticket/>
     </div>
     {/*Page Specific Components*/}

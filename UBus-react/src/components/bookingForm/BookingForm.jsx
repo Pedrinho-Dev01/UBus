@@ -43,6 +43,7 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
           state: {
             passengerName,
             phoneNumber,
+            email,
             selectedDate,
             selectedHour,
             selectedPaymentMethod,

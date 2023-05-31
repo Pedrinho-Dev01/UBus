@@ -75,3 +75,24 @@
 .signup-input:focus {
     border: 2px solid #007AFF;
 }
+
+.ticket-container {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.logo {
+    font-size: 45px;
+    color: white;
+    transition: ease-in-out 0.5s;
+}
+
+.logo:hover {
+    color: #55a0f1;
+    cursor: pointer;
+}
