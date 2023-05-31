@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css'
+import './pages.css'
 
 import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking} from '../containers';
 import { Navbar, Project } from '../components';

@@ -4,9 +4,9 @@ import { Routes, Route, HashRouter } from 'react-router-dom';
 
 //pages
 import Home from './pages/Home'
-import SignUpPage from './pages/SignUp'
+import SignUpPage from './pages/SignUpPage'
 import AccountPage from './pages/AccountPage';
-import ActivityPage from './pages/AcitivyPage';
+import ActivityPage from './pages/ActivityPage';
 import TicketPage from './pages/TicketPage';
 
 const App = () => {
