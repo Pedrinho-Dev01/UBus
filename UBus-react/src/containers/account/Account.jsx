@@ -19,10 +19,12 @@ const Account = () => {
           <td>
             <img src={avatar} alt='avatar' style={{width: "50px"}}/>
           </td>
-          <td colspan="2">
+          <td colspan="2" >
             <b>Profile</b>
           </td>
-          <td></td>
+          <td>
+            UBus-ID: 112001
+          </td>
         </tr>
         <tr className="row">
           <td>
@@ -31,7 +33,9 @@ const Account = () => {
           <td colspan="2">
             <b>Messages</b>
           </td>
-          <td></td>
+              0 new messages
+          <td>
+          </td>
         </tr>
         <tr className="row">
           <td>
@@ -40,7 +44,9 @@ const Account = () => {
           <td colspan="2">
             <b>Send a gift</b>
           </td>
-          <td></td>
+          <td>
+            Not available
+          </td>
         </tr>
         <tr className="row">
           <td>
@@ -48,8 +54,10 @@ const Account = () => {
           </td>
           <td colspan="2">
             <b>Wallet</b>
+          </td>€1,20
+          <td>
+           
           </td>
-          <td></td>
         </tr>
         <tr className="row">
           <td>
@@ -58,16 +66,11 @@ const Account = () => {
           <td colspan="2">
             <b>Promotions</b>
           </td>
-          <td></td>
-        </tr>
-        <tr className="row">
+            <label class="switch">
+              <input type="checkbox"></input>
+            </label>
           <td>
-            <img src={settings} alt='settings' style={{width: "50px"}}/>
           </td>
-          <td colspan="2">
-            <b>Settings</b>
-          </td>
-          <td></td>
         </tr>
       </table>
     </div>
