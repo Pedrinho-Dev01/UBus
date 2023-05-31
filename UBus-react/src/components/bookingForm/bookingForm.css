@@ -15,9 +15,10 @@
   
   .modal-content {
     background-color: #292F38;
-    border-radius: 8px;
+    border-radius: 35px;
     padding: 20px;
-    width: 400px;
+    width: 500px;
+    height: 650px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   
@@ -32,6 +33,7 @@
     font-size: 20px;
     margin: 0;
     color: white;
+    margin-bottom: 30px;
   }
   
   .close-button {
@@ -40,11 +42,8 @@
     color: white;
     cursor: pointer;
     font-size: 24px;
+    border-radius: 50px;
     transition: color 0.3s ease;
-  }
-  
-  .close-button:hover {
-    color: #000;
   }
   
   .modal-body label {
@@ -81,7 +80,7 @@
     color: #fff;
     border: none;
     padding: 10px 15px;
-    border-radius: 4px;
+    border-radius: 30px;
     cursor: pointer;
     transition: background-color 0.3s ease;
   }
@@ -91,3 +90,13 @@
     background-color: #0db0d9;
   }
   
+  #view-map {
+    margin-bottom: 20px;
+    font-size: 14px;
+    transition: ease 0.5s;
+  }
+
+  #view-map:hover {
+    cursor: pointer;
+    color: #007AFF;
+  }

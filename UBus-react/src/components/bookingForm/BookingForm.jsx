@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import './bookingForm.css'
 import { useNavigate } from 'react-router-dom';
 
+//tostify - for warning popups
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
     const navigate = useNavigate();
     const [passengerName, setPassengerName] = useState('');
@@ -35,10 +39,41 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
       setSelectedPaymentMethod(e.target.value);
     };
 
-    const handleBookPay = () => {
-        // Validate the form data here
-    
-        // If the form data is valid, navigate to the confirmation page
+    const handleFormSubmit = (e) => {
+      e.preventDefault();
+  
+      // Check if the form/search is incomplete
+      const isFormIncomplete = !passengerName || !email || !selectedDate || !selectedHour || !selectedPaymentMethod;
+      const isSearchIncomplete =  pickAddress==='' || dropAddress==='';
+      console.log("pick:", pickAddress)
+  
+      if (isSearchIncomplete){
+        toast.dismiss();
+        toast.error('Pick Up or Drop Off missing.', {
+          position: 'bottom-center',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+        });
+      }
+      else if (isFormIncomplete) {
+        toast.dismiss();
+        toast.error('Form is incomplete. Please fill in all required fields.', {
+          position: 'bottom-center',
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: false,
+          progress: undefined,
+        });
+      } else {
+        // Proceed with form submission
+        console.log("Booking Success!")
+        //Redirect to ticket delivery page
         navigate('/ticket', {
           state: {
             passengerName,
@@ -51,7 +86,14 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
             dropAddress
           },
         });
-      };
+      }
+    };
+
+    const handleMapView = () => {
+      // close the modal search window and scroll down to the map
+      onClose();
+      document.getElementById('Service-map').scrollIntoView({ behavior: 'smooth' });
+    };
   
     if (!isOpen) {
       return null; // Render nothing if the modal is closed
@@ -120,9 +162,11 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
               </select>
             </label>
             <br />
-            <button onClick={handleBookPay}>Book and Pay</button>
+            <p onClick={handleMapView} id='view-map'><p>See Pick-up and Drop-off on map</p></p>
+            <button onClick={handleFormSubmit} type='submit'>Book and Pay</button>
           </div>
         </div>
+        <ToastContainer />
       </div>
     );
   }

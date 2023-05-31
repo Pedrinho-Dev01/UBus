@@ -458,15 +458,26 @@ const MapView = () => {
       <div className='booking-form'>
         <div className='booking-from-to'>
           <p className='align_a'>Pick Up:</p>
-          <input type="text" id="pick_up" onChange={handlePickup} value={SearchPickUp} className='booking-fillBox' list='pick_up'>
-
+          <input 
+            autoComplete='off'
+            type="text" 
+            id="pick_up" 
+            onChange={handlePickup} 
+            value={SearchPickUp} 
+            className='booking-fillBox' 
+            list='pick_up'>
           </input>
         </div>
         <br></br>
         <div className='booking-from-to'>
           <p className='align_a'>Drop Off:</p>
-          <input type="text" id='drop-off' onChange={handleDropOff} value={SearchDropOff} className='booking-fillBox'>
-            
+          <input
+            autoComplete='off'
+            type="text"
+            id='drop-off'
+            onChange={handleDropOff}
+            value={SearchDropOff}
+            className='booking-fillBox'>
           </input>
         </div>
       </div>
