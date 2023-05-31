@@ -1,5 +1,6 @@
 import React from 'react';
 import './account.css';
+import './person.png';
 import steering_wheel from '../../assets/account_icons/steering_wheel.svg'
 import wallet from '../../assets/account_icons/wallet.svg'
 import gift from '../../assets/account_icons/gift.svg'
@@ -7,81 +8,70 @@ import letter from '../../assets/account_icons/letter.svg'
 import discount from '../../assets/account_icons/discount.svg'
 import settings from '../../assets/account_icons/settings.svg'
 
+const avatar = require('./person.png')
+
 const Account = () => {
   return (
     <div>
-      <h1 id='account-section' className='section-title'>Account</h1>
-      <h2 id='account_id'></h2>
-      <div class="table">
-        <table class="center">
-          <tr>
+      <h1>Welcome to your Account</h1>
+      <table>
+        <tr className="row">
           <td>
-          <img src={steering_wheel} alt='steering' style={{width: "50px"}}/>
+            <img src={avatar} alt='avatar' style={{width: "50px"}}/>
           </td>
+          <td colspan="2">
+            <b>Profile</b>
+          </td>
+          <td></td>
+        </tr>
+        <tr className="row">
           <td>
-            <b>Driver Mode</b>
+            <img src={letter} alt='letter' style={{width: "50px"}}/>
           </td>
+          <td colspan="2">
+            <b>Messages</b>
+          </td>
+          <td></td>
+        </tr>
+        <tr className="row">
           <td>
-            <label class="switch">
-              <input type="checkbox" checked></input>
-              <span class="slider round"></span>
-            </label>
+            <img src={gift} alt='gift' style={{width: "50px"}}/>
           </td>
-          </tr>
-          <tr>
-            <td>
-              <img src={wallet} alt='wallet' style={{width: "50px"}}/>
-            </td>
-            <td>
-              <b>Balance</b>
-            </td>
-            <td>
-              <b>€0,00</b>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <img src={letter} alt='letter' style={{width: "50px"}}/>
-            </td>
-            <td colspan="2">
-              <b>Messages</b>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <img src={gift} alt='gift' style={{width: "50px"}}/>
-            </td>
-            <td colspan="2">
-              <b>Send a gift</b>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <img src={discount} alt='discount' style={{width: "50px"}}/>
-            </td>
-            <td colspan="2">
-              <b>Promotions</b>
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              <img src={settings} alt='settings' style={{width: "50px"}}/>
-            </td>
-            <td colspan="2">
-              <b>Settings</b>
-            </td>
-          </tr>
-        </table>
-      </div>
+          <td colspan="2">
+            <b>Send a gift</b>
+          </td>
+          <td></td>
+        </tr>
+        <tr className="row">
+          <td>
+            <img src={wallet} alt='wallet' style={{width: "50px"}}/>
+          </td>
+          <td colspan="2">
+            <b>Wallet</b>
+          </td>
+          <td></td>
+        </tr>
+        <tr className="row">
+          <td>
+            <img src={discount} alt='discount' style={{width: "50px"}}/>
+          </td>
+          <td colspan="2">
+            <b>Promotions</b>
+          </td>
+          <td></td>
+        </tr>
+        <tr className="row">
+          <td>
+            <img src={settings} alt='settings' style={{width: "50px"}}/>
+          </td>
+          <td colspan="2">
+            <b>Settings</b>
+          </td>
+          <td></td>
+        </tr>
+      </table>
     </div>
-
-    
-    
-
-  )
+  );
 }
 
-export default Account
+export default Account;

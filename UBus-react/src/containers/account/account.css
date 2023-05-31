@@ -4,7 +4,8 @@
     font-family: var(--font-family);
     color: white;
     margin-left: 75px;
-    margin-bottom: 50px;
+    margin-bottom: 70px;
+    top: 70px;
 }
 
 body {
@@ -12,53 +13,43 @@ body {
     font-family: var(--font-family);
 }
 
-table.center {
-    margin-left: auto; 
-    margin-right: auto;
-    text-align: center;
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
 }
+
+td, th {
+  padding: 0;
+  margin: 0;
+}
+
+td {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+td img {
+  display: block;
+  margin: 0 auto;
+}
+
+td:not(:first-child):not(:last-child) {
+  width: 100px; /* replace 200px with the desired width */
+}
+
+tr {
+  padding: 0;
+  margin: 0;
+}
+
+/* ...existing styles... */
 
 table.center tr:hover {
   background-color: #1a436e;
 }
-
-/* Toggle switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-  }
-  
-  .switch input { 
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-  
-  .slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
-  
-  .slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    -webkit-transition: .4s;
-    transition: .4s;
-  }
   
   input:checked + .slider {
     background-color: #2196F3;
@@ -81,4 +72,9 @@ table.center tr:hover {
   
   .slider.round:before {
     border-radius: 50%;
+  }
+
+  .row:hover {
+    background-color: #1a436e;
+    cursor: pointer;
   }
