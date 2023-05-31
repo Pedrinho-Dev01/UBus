@@ -2,90 +2,80 @@ import React, { useState } from 'react';
 import './search.css';
 
 const Search = ({ onClose }) => {
-  const handleClose = () => {
-    onClose();
-  };
+  const [selectedBus, setSelectedBus] = useState('');
+  const [busInfo, setBusInfo] = useState('');
 
   const handleSearch = () => {
-    // create a search that checks if the search input is one of the buses in the list
-
-    // close the modal search window and scroll down to the map
-    onClose();
-    document.getElementById('Service-map').scrollIntoView({ behavior: 'smooth' });
+    const bus = mockData.find((bus) => bus.text === selectedBus);
+    if (bus) {
+      setBusInfo(bus.info);
+    }
   };
 
-  const [search, setSearch] = useState('');
+  const handleClose = () => {
+    setSelectedBus('');
+    setBusInfo('');
+    onClose();
+  };
 
   const mockData = [
     {
       text: 'Bus #16',
+      info: 'Realtime Information for Bus #16 is currently not available.',
     },
     {
       text: 'Bus #18',
+      info: 'Realtime Information for Bus #18 is currently not available.',
     },
     {
       text: 'Bus #23',
+      info: 'Realtime Information for Bus #23 is currently not available.',
     },
     {
       text: 'Bus #37',
+      info: 'Realtime Information for Bus #37 is currently not available.',
     },
     {
       text: 'Bus #42',
+      info: 'Realtime Information for Bus #42 is currently not available.',
     },
     {
       text: 'Bus #45',
+      info: 'Realtime Information for Bus #45 is currently not available.',
     },
     {
       text: 'Bus #49',
+      info: 'Realtime Information for Bus #49 is currently not available.',
     },
   ];
 
   return (
-    <div className="modal-overlay K7__header section__padding">
-      <div className="modal-content K7__header-content">
-        <button className="close-button" onClick={handleClose}>
-          X
-        </button>
-
-        <h2 className="gradient__text">Search for More Information</h2>
-        <p></p>
-        <input
-          id="search-input"
-          type="text"
-          placeholder="Enter your search query"
-          onChange={(e) => setSearch(e.target.value)}
-          value={search}
-        />
-        <div className="result-box">
-          <ul>
-            {search && // Added condition to check if search is not empty
-              mockData
-                .filter((item) =>
-                  item.text.toLowerCase().includes(search.toLowerCase())
-                )
-                .map((item, index) => (
-                  <li
-                    key={index}
-                    onClick={() => {
-                      // when the user clicks on the search result, the search input will be filled with the result
-                      setSearch(item.text);
-                    }}
-                    style={{
-                      display: item.text
-                        .toLowerCase()
-                        .includes(search.toLowerCase())
-                        ? 'block'
-                        : 'none',
-                    }}
-                  >
-                    {item.text}
-                  </li>
-                ))}
-          </ul>
+    <div className="modal-overlay">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h2 className="modal-title">Search for More Information</h2>
+          <button className="close-button" onClick={handleClose}>
+            X
+          </button>
         </div>
-        <button type="button" className="searchBtn" onClick={handleSearch}>
-          Search
-        </button>
+        <select
+          value={selectedBus}
+          onChange={(e) => setSelectedBus(e.target.value)}
+        >
+          <option value="">Select a bus</option>
+          {mockData.map((bus) => (
+            <option key={bus.text} value={bus.text}>
+              {bus.text}
+            </option>
+          ))}
+        </select>
+        <button onClick={handleSearch}>Search</button>
+        {busInfo && (
+          <div className="bus-info">
+            <h3>Bus Information:</h3>
+            <p>{busInfo}</p>
+          </div>
+        )}
       </div>
     </div>
   );
