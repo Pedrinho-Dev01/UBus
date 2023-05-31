@@ -2,6 +2,6 @@ body.signUpPage {
     background-image: url('./signBG.jpg');
     background-size: cover;
     background-position: center;
-    padding-top: 20px;
-    padding-bottom: 119px;
+    padding-top: 15px;
+    padding-bottom: 105px;
 }
