@@ -1,13 +1,14 @@
 import React from 'react';
 import '../App.css'
 
-import { Footer, Account } from '../containers';
+import { Footer, TicketList} from '../containers';
 import { Navbar, UserNavbar } from '../components';
 
 const ActivityPage = () => {
 
   //get login status
-  const login = localStorage.getItem('login');
+  const login = JSON.parse(localStorage.getItem('login'));
+
 
     return (
       <>
@@ -19,7 +20,7 @@ const ActivityPage = () => {
   
       {/*Page Specific Components*/}
       <div className='page-content'>
-          <h1>This Page is not available yet</h1>
+          <TicketList />
       </div>
       {/*Page Specific Components*/}
   

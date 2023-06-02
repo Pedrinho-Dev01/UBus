@@ -9,6 +9,10 @@ function Ticket() {
   const ticketID = Math.floor(Math.random() * 1000000) + 1;
   const bookingID = Math.floor(Math.random() * 1000000000000) + 1;
 
+  //save ticket details to local storage
+  localStorage.setItem('ticketID', ticketID);
+  localStorage.setItem('bookingID', bookingID);
+
   const getCurrentDateTime = () => {
     const currentDate = new Date();
     const dateAndTime = currentDate.toLocaleString();

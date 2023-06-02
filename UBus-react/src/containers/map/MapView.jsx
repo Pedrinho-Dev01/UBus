@@ -1,6 +1,6 @@
 import React, {useState}from 'react';
 import './map.css';
-import '../booking/booking.css'
+import './booking.css'
 import "leaflet/dist/leaflet.css"
 import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import L from 'leaflet';

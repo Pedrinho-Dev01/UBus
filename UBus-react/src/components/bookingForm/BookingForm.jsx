@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
     const navigate = useNavigate();
+    
     const [passengerName, setPassengerName] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [email, setEmail] = useState('');
@@ -45,7 +46,9 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
       // Check if the form/search is incomplete
       const isFormIncomplete = !passengerName || !email || !selectedDate || !selectedHour || !selectedPaymentMethod;
       const isSearchIncomplete =  pickAddress==='' || dropAddress==='';
-      console.log("pick:", pickAddress)
+      
+      //ticket emmitted
+      localStorage.setItem('ticketPurchase', JSON.parse(true));
   
       if (isSearchIncomplete){
         toast.dismiss();
@@ -73,6 +76,17 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
       } else {
         // Proceed with form submission
         console.log("Booking Success!")
+
+        // Save ticket details to local storage
+        localStorage.setItem('passengerName', passengerName);
+        localStorage.setItem('phoneNumber', phoneNumber);
+        localStorage.setItem('email', email);
+        localStorage.setItem('selectedDate', selectedDate);
+        localStorage.setItem('selectedHour', selectedHour);
+        localStorage.setItem('selectedPaymentMethod', selectedPaymentMethod);
+        localStorage.setItem('pickAddress', pickAddress);
+        localStorage.setItem('dropAddress', dropAddress);
+
         //Redirect to ticket delivery page
         navigate('/ticket', {
           state: {

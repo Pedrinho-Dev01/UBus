@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RiMenu3Line, RiCloseLine, RiUnderline } from 'react-icons/ri';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './userNavbar.css';
 
 const Menu = () => (

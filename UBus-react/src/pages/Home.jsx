@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css'
 import './pages.css'
 
-import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking} from '../containers';
+import { Footer, Header, MapView } from '../containers';
 import { Navbar, UserNavbar } from '../components';
 
 const Home = () => {

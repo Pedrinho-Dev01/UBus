@@ -15,6 +15,8 @@ const SignUp = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    localStorage.setItem('ticketPurchase', JSON.parse(false));
+
     // Check if all fields are filled
     if (!fullName || !email || !password || !phoneNumber) {
       toast.dismiss();

@@ -1,19 +1,26 @@
 import React from 'react';
 import './account.css';
 import './person.png';
-import steering_wheel from '../../assets/account_icons/steering_wheel.svg'
+//import steering_wheel from '../../assets/account_icons/steering_wheel.svg'
 import wallet from '../../assets/account_icons/wallet.svg'
 import gift from '../../assets/account_icons/gift.svg'
 import letter from '../../assets/account_icons/letter.svg'
 import discount from '../../assets/account_icons/discount.svg'
-import settings from '../../assets/account_icons/settings.svg'
+//import settings from '../../assets/account_icons/settings.svg'
 
 const avatar = require('./person.png')
+
+//user data
+const username = localStorage.getItem('username');
+const email = localStorage.getItem('email');
+const phone = localStorage.getItem('phoneNumber');
+
 
 const Account = () => {
   return (
     <div>
-      <h1>Welcome to your Account</h1>
+      <h1>Welcome {username}</h1>
+      <p style={{marginBottom:'50px'}}>{email} | {phone}</p>
       <table>
         <tr className="row">
           <td>

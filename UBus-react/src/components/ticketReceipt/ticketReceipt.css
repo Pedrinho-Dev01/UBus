@@ -1,0 +1,23 @@
+.ticket-receipt {
+    width: 100%;
+    height: 100%;
+    border-radius: 35px;
+
+    display: flex;
+    flex-direction: column;
+    background: var(--color-footer);
+}
+
+
+.cancel-ticket {
+    width: 150px;
+    height: 50px;
+    margin-top: 50px;
+    background-color: rgba(143, 5, 5, 0.738);
+    transition: ease 0.8s;
+    font-weight: bold;
+}
+
+.cancel-ticket:hover {
+    background-color: rgba(244, 11, 11, 0.738);
+}
