@@ -16,7 +16,7 @@ const handleLogout = () => {
   const login = localStorage.getItem('login');
 
   // Redirect to home page
-  window.location.href = '#/';
+  window.location.href = '/';
   
   //Debugging
   console.log('Set login:', login);
@@ -26,7 +26,7 @@ const handleLogout = () => {
 const UserNavbar = () => {
   // Add state for toggleMenu and signInModal
   const [toggleMenu, setToggleMenu] = useState(false);
-  const [username, setUsername] = useState('USERNAME PLACEHOLDER');
+  const username = localStorage.getItem('username');
 
   return (
     <div className="K7__navbar">
@@ -55,8 +55,8 @@ const UserNavbar = () => {
             <div className='K7__navbar-menu_container-links'>
               <Menu />
               <div className='K7__navbar-menu_container-links-sign'>
-                <a><p>Sign in</p></a>
-                <a href='#/sign-up'><button type='button'>{username}</button></a>
+                <a><p style={{ fontWeight: 'bold' }}>{username}</p></a>
+                <a onClick={handleLogout}><button type='button' className='navbar-logout'>Logout</button></a>
               </div>
             </div>
           </div>

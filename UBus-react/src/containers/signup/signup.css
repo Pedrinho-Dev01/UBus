@@ -69,3 +69,8 @@
 .signup_signup-input:focus {
     border: 2px solid #007AFF;
 }
+
+.invalid-input {
+    border: 2px solid red;
+  }
+  
