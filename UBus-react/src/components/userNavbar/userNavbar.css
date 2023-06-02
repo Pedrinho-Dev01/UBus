@@ -245,13 +245,13 @@
     cursor: pointer;
  }
 
- .disabled {
-    opacity: 0.5;
-    color: #fff;
+ button.navbar-logout {
+    background-color: #ab0c0c;
+    cursor: pointer;
+    transition: ease 0.5s;
  }
 
- .disabled:hover {
-    opacity: 0.5;
-    color: #fff;
-    cursor: default;
+ button.navbar-logout:hover {
+    background-color: #f24444;
+    cursor: pointer;
  }

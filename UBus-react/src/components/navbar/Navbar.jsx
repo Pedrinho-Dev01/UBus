@@ -1,14 +1,40 @@
 import React, { useState } from 'react';
-import { RiMenu3Line, RiCloseLine, RiUnderline } from 'react-icons/ri';
+import { RiMenu3Line, RiCloseLine } from 'react-icons/ri';
 import './navbar.css';
+
+//tostify - for warning popups
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Menu = () => (
   <>
   <p><a href='#/'>Service</a></p>
-  <p><a href='#/activity'>Activity</a></p>
-  <p><a href='#/account'>Account</a></p>
+  <p><a className='disabled' onClick={notAvailable}>Activity</a></p>
+  <p><a className='disabled' onClick={notAvailable}>Account</a></p>
   </>
 )
+
+const notAvailable = () => {
+  toast.dismiss();
+  toast.error('Pick Up or Drop Off missing.', {
+    position: 'bottom-center',
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: false,
+    progress: undefined,
+  });
+};
+
+// Set login to true
+const setLogin = () => {
+  localStorage.setItem('login', true);
+  const login = localStorage.getItem('login');
+  window.location.reload();
+  //Debugging
+  console.log('Set login:',login);
+};
 
 const SignInModal = ({ closeModal }) => {
   const [username, setUsername] = useState('');
@@ -46,7 +72,7 @@ const SignInModal = ({ closeModal }) => {
           <h5 id='extra-signin'>
           <a href="#/sign-up">Don't have an account? <u>Sign Up</u></a> 
           </h5>
-          <button type="submit" className='signin-btn'>Sign In</button>
+          <button type="submit" className='signin-btn' onClick={setLogin}>Sign In</button>
         </form>
       </div>
     </div>
@@ -96,7 +122,7 @@ const Navbar = () => {
             <div className='K7__navbar-menu_container-links'>
               <Menu />
               <div className='K7__navbar-menu_container-links-sign'>
-                <a><p>Sign in</p></a>
+                <a onClick={openSignInModal}><p>Sign in</p></a>
                 <a href='#/sign-up'><button type='button'>Sign up</button></a>
               </div>
             </div>

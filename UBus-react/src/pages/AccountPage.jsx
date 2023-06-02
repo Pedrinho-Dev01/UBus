@@ -2,14 +2,18 @@ import React from 'react';
 import '../App.css'
 
 import { Footer, Account } from '../containers';
-import { Navbar } from '../components';
+import { Navbar, UserNavbar } from '../components';
 
 const AccountPage = () => {
+
+    //get login status
+    const login = localStorage.getItem('login');
+
     return (
       <>
       {/*Navbar + Header*/}
       <div className='gradient__bg'>
-          <Navbar/>
+          {login ? <UserNavbar /> : <Navbar />}
       </div>
       {/*Navbar + Header*/}
   

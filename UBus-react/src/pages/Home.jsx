@@ -3,15 +3,20 @@ import '../App.css'
 import './pages.css'
 
 import { Footer, DesignProjects, Possibility, Features, WhatPortfolio, Header, MapView, Booking} from '../containers';
-import { Navbar, Project } from '../components';
+import { Navbar, UserNavbar } from '../components';
 
 const Home = () => {
+
+  //get login status
+  const login = JSON.parse(localStorage.getItem('login'));
+  console.log('Login Status:',login);
+
   return (
     <>
     {/*Navbar + Header*/}
     <div className='gradient__bg'>
-        <Navbar/>
-        <Header/>
+      {login ? <UserNavbar /> : <Navbar />}
+      <Header />
     </div>
     {/*Navbar + Header*/}
 
