@@ -148,7 +148,8 @@
 
 .modal-content {
     width: 400px;
-    background-color: #1a436e;
+    border: #ccc 1px solid;
+    border-radius: 20px;
   }
   
   #username,
