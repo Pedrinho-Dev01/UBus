@@ -1,6 +1,6 @@
 /* CSS for Modal Window */
 
-.modal {
+.booking-modal {
     position: fixed;
     top: 0;
     left: 0;
@@ -13,7 +13,7 @@
     z-index: 9999;
   }
   
-  .modal-content {
+  .booking-modal-content {
     background-color: #292F38;
     border-radius: 35px;
     padding: 20px;
@@ -22,21 +22,21 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   }
   
-  .modal-header {
+  .booking-modal-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 10px;
   }
   
-  .modal-header h2 {
+  .booking-modal-header h2 {
     font-size: 20px;
     margin: 0;
     color: white;
     margin-bottom: 30px;
   }
   
-  .close-button {
+  .booking-close-button {
     background: none;
     border: none;
     color: white;
@@ -46,7 +46,7 @@
     transition: color 0.3s ease;
   }
   
-  .modal-body label {
+  .booking-modal-body label {
     display: block;
     text-align: left;
     margin-bottom: 10px;
@@ -54,28 +54,28 @@
     color: white;
   }
   
-  .modal-body input[type="text"],
-  .modal-body input[type="number"],
-  .modal-body input[type="email"],
-  .modal-body input[type="time"],
-  .modal-body input[type="date"],
-  .modal-body input[type="tel"],
-  .modal-body select {
+  .booking-modal-body input[type="text"],
+  .booking-modal-body input[type="number"],
+  .booking-modal-body input[type="email"],
+  .booking-modal-body input[type="time"],
+  .booking-modal-body input[type="date"],
+  .booking-modal-body input[type="tel"],
+  .booking-modal-body select {
     width: 100%;
     padding: 8px;
     border: 1px solid #ffffff;
     border-radius: 4px;
   }
   
-  .modal-body textarea {
+  .booking-modal-body textarea {
     width: 100%;
     padding: 8px;
     border: 1px solid #ffffff;
     border-radius: 4px;
   }
   
-  .modal-body button[type="submit"],
-  .modal-body button {
+  .booking-modal-body button[type="submit"],
+  .booking-modal-body button {
     background-color: #007AFF;
     color: #fff;
     border: none;
@@ -85,8 +85,8 @@
     transition: background-color 0.3s ease;
   }
   
-  .modal-body button[type="submit"]:hover,
-  .modal-body button:hover {
+  .booking-modal-body button[type="submit"]:hover,
+  .booking-modal-body button:hover {
     background-color: #0db0d9;
   }
   

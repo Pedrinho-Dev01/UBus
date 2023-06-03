@@ -114,15 +114,15 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
     }
   
     return (
-      <div className="modal">
-        <div className="modal-content">
-          <div className="modal-header">
+      <div className="booking-modal">
+        <div className="booking-modal-content">
+          <div className="booking-modal-header">
             <h2>Ticket Details</h2>
-            <button className="close-button" onClick={onClose}>
+            <button className="booking-close-button" onClick={onClose}>
               X
             </button>
           </div>
-          <div className="modal-body">
+          <div className="booking-modal-body">
             <label>
               Passenger Name:
               <input
