@@ -1,7 +1,7 @@
 .signup_page-content {
     position: relative;
     z-index: 1;
-    margin-top: 8%;
+    margin-top: 2%;
     margin-left: 35%;
     margin-right: 35%;
     height: 500px;
@@ -74,3 +74,12 @@
     border: 2px solid red;
   }
   
+
+  .signup__gradient__text {
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clop: text;
+    -webkit-text-fill-color: transparent;
+    position: inherit;
+    font-size: 50px;
+  }

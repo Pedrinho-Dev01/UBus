@@ -64,6 +64,9 @@ const SignUp = () => {
       {/* Page Specific Components */}
       <div className='body'>
         <div className='signup_gradient_bg'>
+          <a href='/UBus'>
+            <h1 className='signup__gradient__text'>UBus</h1>
+          </a>
           <div className="signup_page-content">
             <br />
             <h1 className='signup_gradient__text'>Sign Up</h1>
