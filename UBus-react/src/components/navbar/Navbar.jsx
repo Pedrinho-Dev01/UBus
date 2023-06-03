@@ -44,18 +44,20 @@ const setLogin = () => {
 };
 
 const SignInModal = ({ closeModal }) => {
-  const [usernameCheck, setUsernameCheck] = useState('');
+  const [userCheck, setUserCheck] = useState('');
   const [passwordCheck, setPasswordCheck] = useState('');
 
-  const LocalUsername = localStorage.getItem('username');
+  // Get local storage credentials
+  const LocalEmail = localStorage.getItem('email');
+  const LocalPhone = localStorage.getItem('phoneNumber');
   const LocalPassword = localStorage.getItem('password');
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (usernameCheck === LocalUsername && passwordCheck === LocalPassword) {
+    if (userCheck.toLowerCase() === LocalEmail.toLowerCase() || userCheck === LocalPhone && passwordCheck === LocalPassword) {
       setLogin();
-      setUsernameCheck('');
+      setUserCheck('');
       setPasswordCheck('');
       closeModal();
 
@@ -70,7 +72,7 @@ const SignInModal = ({ closeModal }) => {
         progress: undefined,
       });
     } else {
-      setUsernameCheck('');
+      setUserCheck('');
       setPasswordCheck('');
 
       toast.dismiss();
@@ -98,8 +100,8 @@ const SignInModal = ({ closeModal }) => {
             type="text"
             placeholder="Email or Phone Number"
             id="username"
-            value={usernameCheck}
-            onChange={(e) => setUsernameCheck(e.target.value)}
+            value={userCheck}
+            onChange={(e) => setUserCheck(e.target.value)}
           />
           <input
             type="password"
