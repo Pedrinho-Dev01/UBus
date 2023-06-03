@@ -76,7 +76,7 @@ const SignUp = () => {
                 <input
                   className='signup_signup-input'
                   type="text"
-                  placeholder='Full Name'
+                  placeholder='Username'
                   value={fullName}
                   onChange={(e) => setFullName(e.target.value)}
                 />
