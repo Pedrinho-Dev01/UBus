@@ -55,7 +55,7 @@ const SignInModal = ({ closeModal }) => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    if (userCheck.toLowerCase() === LocalEmail.toLowerCase() || userCheck === LocalPhone && passwordCheck === LocalPassword) {
+    if ((userCheck.toLowerCase() === LocalEmail.toLowerCase() || userCheck === LocalPhone) && passwordCheck === LocalPassword) {
       setLogin();
       setUserCheck('');
       setPasswordCheck('');
