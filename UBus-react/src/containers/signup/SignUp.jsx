@@ -53,7 +53,7 @@ const SignUp = () => {
     setPassword('');
     setPhoneNumber('');
 
-    window.location.href = '/';
+    window.location.href = '/UBus';
   };
 
   return (

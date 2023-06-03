@@ -61,7 +61,7 @@ const Account = () => {
           </td>
           <td colspan="2">
             <b>Wallet</b>
-          </td>€1,20
+          </td>€0,00
           <td>
            
           </td>
