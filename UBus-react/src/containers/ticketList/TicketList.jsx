@@ -13,7 +13,7 @@ const TicketList = () => {
       </div>
       <div className='K7__projects-container'>
         <div className='K7__projects-container_groupA'>
-          {ticket ? <TicketReceipt /> : null}
+          {ticket ? <TicketReceipt /> : <div style={{marginBottom:'50px', textAlign:'left'}}>No Tickets purchased</div>}
         </div>
       </div>
     </div>
