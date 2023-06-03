@@ -14,6 +14,7 @@ const avatar = require('./person.png')
 const username = localStorage.getItem('username');
 const email = localStorage.getItem('email');
 const phone = localStorage.getItem('phoneNumber');
+const UBusID = localStorage.getItem('userUBusID');
 
 
 const Account = () => {
@@ -30,7 +31,7 @@ const Account = () => {
             <b>Profile</b>
           </td>
           <td>
-            UBus-ID: 112001
+            UBus-ID: {UBusID}
           </td>
         </tr>
         <tr className="row">

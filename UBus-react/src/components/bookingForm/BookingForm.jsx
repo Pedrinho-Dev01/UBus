@@ -48,6 +48,13 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
     return emailRegex.test(email);
   };
 
+  const isFutureDateTime = (date, time) => {
+    const selectedDateTime = new Date(`${date}T${time}`);
+    const currentDateTime = new Date();
+
+    return selectedDateTime > currentDateTime;
+  };
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
 
@@ -65,7 +72,7 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
 
     if (isSearchIncomplete) {
       toast.dismiss();
-      toast.error('Pick Up or Drop Off missing.', {
+      toast.error('Pick Up or Drop Off missing or Incorrect.', {
         position: 'bottom-center',
         autoClose: 3000,
         hideProgressBar: false,
@@ -98,7 +105,18 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
       });
     } else if (!validateEmail(email)) {
       toast.dismiss();
-      toast.error('Invalid email. Please enter a valid email address.', {
+      toast.error('Invalid email address. Please enter a valid email address.', {
+        position: 'bottom-center',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: false,
+        progress: undefined,
+      });
+    } else if (!isFutureDateTime(selectedDate, selectedHour)) {
+      toast.dismiss();
+      toast.error('Selected date and time must be in the future.', {
         position: 'bottom-center',
         autoClose: 3000,
         hideProgressBar: false,
@@ -183,6 +201,7 @@ function ModalWindow({ isOpen, onClose, pickAddress, dropAddress }) {
               type="date"
               value={selectedDate}
               onChange={handleDateChange}
+              min={new Date().toISOString().split('T')[0]} // Set min date to current date
             />
           </label>
           <label>

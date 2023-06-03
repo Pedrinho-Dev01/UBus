@@ -41,12 +41,15 @@ const SignUp = () => {
     } else {
       setPhoneNumberValid(true);
     }
+    //generate user UBus-ID
+    const userUBusID = Math.floor(Math.random() * 100000);
 
     // Store the input values in local storage
     localStorage.setItem('username', fullName);
     localStorage.setItem('email', email);
     localStorage.setItem('password', password);
     localStorage.setItem('phoneNumber', phoneNumber);
+    localStorage.setItem('userUBusID', userUBusID);
 
     setFullName('');
     setEmail('');
