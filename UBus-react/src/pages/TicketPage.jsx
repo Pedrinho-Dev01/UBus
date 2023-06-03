@@ -8,7 +8,7 @@ const TicketPage = () => {
   return (
     <>
     <div className='logo-container'>
-      <a href='/' className='logo'><h1>UBus</h1></a>
+      <a href='/UBus' className='logo'><h1>UBus</h1></a>
       <p>Ticket delivery page</p>
     </div>
     {/*Page Specific Components*/}

@@ -16,7 +16,7 @@ const handleLogout = () => {
   const login = localStorage.getItem('login');
 
   // Redirect to home page
-  window.location.href = '/';
+  window.location.href = '/UBus';
   
   //Debugging
   console.log('Set login:', login);
